@@ -1,0 +1,1 @@
+from .familiarAsignadoSerializer import FamiliarAsignadoSerializer

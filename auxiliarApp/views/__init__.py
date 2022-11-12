@@ -1,0 +1,6 @@
+import imp
+from .actualizarAuxiliarView import ActualizarAuxiliarView
+from .consultarAuxiliarView import ConsultarAuxiliarView
+from .crearAuxiliarView import CrearAuxiliarView
+from .eliminarAuxiliarView import EliminarAuxiliarView
+from .obtenerAuxiliarView import ObtenerAuxiliarView

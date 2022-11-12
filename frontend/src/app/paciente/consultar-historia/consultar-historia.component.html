@@ -1,0 +1,34 @@
+<div class="card-info">
+  <table class="table table-dark">
+    <thead>
+      <tr>
+        <th scope="col">Oximetria</th>
+        <th scope="col">Temperatura</th>
+        <th scope="col">Frecuencia Respiratoria</th>
+        <th scope="col">Glicemia</th>
+        <th scope="col">Comentario Medico</th>
+        <th scope="col">Actualizar</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let historia of this.historial">
+        <td>{{historia.oximetria}}</td>
+        <td>{{historia.temperatura}}</td>
+        <td>{{historia.frecuencia_respiratoria}}</td>
+        <td>{{historia.glicemia}}</td>
+        <td>
+          <mat-form-field class="pb-2 w-75 text-white" appearance="fill">
+            <mat-label class="text-white">Comentario Medico</mat-label>
+            <input matInput value="historia.comentario_medico" [(ngModel)]="historia.comentario_medico" required="true">
+          </mat-form-field>
+        </td>
+        <td>
+          <button class="btn btn-primary" (click)="updateReview(historia.id, historia)" *ngIf="esProfesional()">
+            <i class="material-icons">border_color</i>
+          </button>
+          <i class="material-icons" *ngIf="!esProfesional()">block</i>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

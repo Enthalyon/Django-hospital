@@ -1,0 +1,1 @@
+from .familiarAsignado import FamiliarAsignado

@@ -1,0 +1,100 @@
+<div class="alignment">
+    <div class="content text-center pt-3">
+      <span class="fs-4 pt-2">Registrar profesional</span>
+      <br />
+      <mat-form-field class="pt-3 pb-2 w-75" appearance="fill">
+        <mat-label>Nombres del profesional</mat-label>
+        <input
+          matInput
+          placeholder="Nombres"
+          [(ngModel)]="profesional.nombres"
+          required="true"
+        />
+      </mat-form-field>
+      <mat-form-field class="pb-2 w-75" appearance="fill">
+        <mat-label>Apellidos del profesional</mat-label>
+        <input
+          matInput
+          placeholder="Apellidos"
+          [(ngModel)]="profesional.apellidos"
+          required="true"
+        />
+      </mat-form-field>
+      <mat-form-field class="pb-2 w-75" appearance="fill">
+        <mat-label>Telefono del profesional</mat-label>
+        <input
+          matInput
+          placeholder="Telefono"
+          [(ngModel)]="profesional.telefono"
+          required="true"
+        />
+      </mat-form-field>
+      <mat-form-field class="pb-2 w-75" appearance="fill">
+        <mat-label>Genero del profesional</mat-label>
+        <mat-select [(ngModel)]="profesional.genero">
+          <mat-option
+            *ngFor="let gender of ['Masculino', 'Femenino']"
+            [value]="gender"
+          >
+            {{gender}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field class="pb-2 w-75" appearance="fill">
+        <mat-label>Dirección</mat-label>
+        <input
+          matInput
+          placeholder="Dirección"
+          [(ngModel)]="profesional.direccion"
+          required="true"
+        />
+      </mat-form-field>
+      <mat-form-field class="pb-2 w-75" appearance="fill">
+        <mat-label>Especialidad</mat-label>
+        <mat-select [(ngModel)]="profesional.especialidad">
+            <mat-option
+              *ngFor="let specialty of ['Cirujano', 'Internista', 'Médico general','enfermero' ]"
+              [value]="specialty"
+            >
+              {{specialty}}
+            </mat-option>
+          </mat-select>
+      </mat-form-field>
+      <mat-form-field class="pb-2 w-75" appearance="fill">
+        <mat-label >Medico o enfermero</mat-label>
+        <mat-select [(ngModel)]="profesional.es_medico" class="text-white">
+
+            <mat-option
+              
+              *ngFor="let cargo of ['Medico', 'Enfermero']"
+              [value]="cargo == 'Medico' ? true : false"
+            >
+              {{cargo}}
+            </mat-option>
+          </mat-select>
+      </mat-form-field>
+      <mat-form-field class="pb-2 w-75" appearance="fill">
+        <mat-label>Password</mat-label>
+        <input
+          matInput
+          placeholder="Password"
+          [(ngModel)]="profesional.password"
+          required="true"
+          type="password"
+        />
+      </mat-form-field>
+      <mat-form-field class="pb-2 w-75" appearance="fill">
+        <mat-label>Email</mat-label>
+        <input
+          matInput
+          placeholder="Email"
+          [(ngModel)]="profesional.email"
+          required="true"
+        />
+      </mat-form-field>
+      <br />
+      <button mat-button class="w-75 mb-2" (click)="createCustomer()">
+        Crear
+      </button>
+    </div>
+  </div>

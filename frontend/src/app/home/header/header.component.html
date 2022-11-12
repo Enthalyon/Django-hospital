@@ -1,0 +1,141 @@
+<nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand">Django Hospital</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarText"
+      aria-controls="navbarText"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item dropdown" *ngIf="esAuxiliar()">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            id="navbarDropdown"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Registrar usuarios
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li>
+              <a class="dropdown-item" routerLink="auxiliar/registrar-paciente"
+                >Registrar Paciente</a
+              >
+            </li>
+            <li>
+              <a class="dropdown-item" routerLink="auxiliar/registrar-familiar-asignado"
+                >Registrar Familiar</a
+              >
+            </li>
+            <li>
+              <a class="dropdown-item" routerLink="auxiliar/registrar-personal-de-salud"
+                >Registrar P. Salud</a
+              >
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown" *ngIf="esAuxiliar()">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            id="navbarDropdown"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Asignar
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li>
+              <a class="dropdown-item" routerLink="personal/consultar-pacientes"
+                >Asignar Medico/Enfermero</a
+              >
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown" *ngIf="esProfesional() || esFamiliar()">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            id="navbarDropdown"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Pacientes
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li>
+              <a class="dropdown-item" routerLink="personal/consultar-pacientes"
+                >Consultar Pacientes</a
+              >
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown" *ngIf="esPaciente()">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            id="navbarDropdown"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Signos Vitales
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li>
+              <a class="dropdown-item" routerLink="paciente/crear-registro-signos-vitales"
+                >Registrar signos vitales</a
+              >
+            </li>
+            <li>
+              <a class="dropdown-item" routerLink="paciente/consultar-historia"
+                >Consultar historia clinica</a
+              >
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown" *ngIf="esPaciente()">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            id="navbarDropdown"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Cuenta
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+<!--
+              <li>
+              <a class="dropdown-item" routerLink="" *ngIf="esFamiliar()">Actualizar datos familiar</a>
+            </li>
+-->
+            <li>
+              <a class="dropdown-item" routerLink="paciente/actualizar-datos"
+                >Actualizar datos paciente</a
+              >
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <span class="navbar-text" *ngIf="tokenExist()">
+        <a class="m-1 nav-link" routerLink="login">Iniciar Sesión</a>
+      </span>
+      <span class="m-1 navbar-text" *ngIf="!tokenExist()">
+        <a class="nav-link" (click)="salir()" routerLink="login">Salir</a>
+      </span>
+    </div>
+  </div>
+</nav>

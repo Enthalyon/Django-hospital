@@ -1,0 +1,30 @@
+<section class="form">
+  <h4>Iniciar Sesión</h4>
+  <input
+    class="controls"
+    type="email"
+    name="Correo"
+    id="Correo"
+    placeholder="Ingrese su correo"
+    [(ngModel)]="data.email"
+  />
+  <input
+    class="controls"
+    type="password"
+    name="Contraseña"
+    id="Contraseña"
+    placeholder="Ingrese su contraseña"
+    [(ngModel)]="data.password"
+  />
+  <div class="bg-white">
+    <mat-form-field class="w-100" appearance="fill">
+      <mat-label>Seleccione un tipo de usuario</mat-label>
+      <mat-select [(ngModel)]="selectedId">
+        <mat-option *ngFor="let role of rolesList" [value]="role.value">
+          {{role.name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <input class="botons" type="submit" value="Iniciar Sesión" (click)="loggear()" />  
+</section>

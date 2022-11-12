@@ -1,0 +1,52 @@
+<div class="card-info mt-2">
+  <table class="table table-dark">
+    <thead>
+      <tr>
+        <th scope="col">Nombre</th>
+        <th scope="col">Genero</th>
+        <th scope="col">Ciudad</th>
+        <th scope="col">Fecha de Nacimiento</th>
+        <th scope="col" *ngIf="!esAuxiliar()">Historial</th>
+        <th scope="col" *ngIf="esFamiliar()">Registrar signos</th>
+        <th scope="col" *ngIf="esAuxiliar()">Escoger Profesional</th>
+        <th scope="col" *ngIf="esAuxiliar()">Asignar Profesional</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let paciente of this.pacientes">
+        <td>{{paciente.nombres + " " + paciente.apellidos}}</td>
+        <td>{{paciente.genero}}</td>
+        <td>{{paciente.ciudad}}</td>
+        <td>{{paciente.fecha_de_nacimiento}}</td>
+        <td *ngIf="!esAuxiliar()">
+          <button class="btn btn-primary" (click)="viewHistory(paciente.id)" *ngIf="!esAuxiliar()">
+            <i class="material-icons">history</i>
+          </button>
+        </td>
+        <td *ngIf="esFamiliar()">
+          <button class="btn btn-primary" (click)="registrarSignos(paciente.id)" *ngIf="esFamiliar()">
+            <i class="material-icons">app_registration</i>
+          </button>
+        </td>
+        <td *ngIf="esAuxiliar()">
+          <mat-form-field class="pb-2 w-75" appearance="fill" *ngIf="esAuxiliar()">
+            <mat-label>Genero del profesional</mat-label>
+            <mat-select [(ngModel)]="paciente.id_profesional_medico">
+              <mat-option
+                *ngFor="let profesional of profesionales"
+                [value]="profesional.id"
+              >
+                {{profesional.nombres}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </td>
+        <td *ngIf="esAuxiliar()">
+          <button class="btn btn-primary" (click)="asignarProfesional(paciente.id, paciente)" *ngIf="esAuxiliar()">
+            <i class="material-icons">app_registration</i>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

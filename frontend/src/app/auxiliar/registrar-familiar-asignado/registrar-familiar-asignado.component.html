@@ -1,0 +1,85 @@
+<div class="alignment">
+    <div class="content text-center pt-3">
+      <span class="fs-4 pt-2">Registrar familiar</span>
+      <br />
+      <mat-form-field class="pt-3 pb-2 w-75" appearance="fill">
+        <mat-label>Nombres del familiar</mat-label>
+        <input
+          matInput
+          placeholder="Nombres"
+          [(ngModel)]="familiar.nombres"
+          required="true"
+        />
+      </mat-form-field>
+      <mat-form-field class="pb-2 w-75" appearance="fill">
+        <mat-label>Apellidos del familiar</mat-label>
+        <input
+          matInput
+          placeholder="Apellidos"
+          [(ngModel)]="familiar.apellidos"
+          required="true"
+        />
+      </mat-form-field>
+      <mat-form-field class="pb-2 w-75" appearance="fill">
+        <mat-label>Telefono del familiar</mat-label>
+        <input
+          matInput
+          placeholder="Telefono"
+          [(ngModel)]="familiar.telefono"
+          required="true"
+        />
+      </mat-form-field>
+      <mat-form-field class="pb-2 w-75" appearance="fill">
+        <mat-label>Genero del familiar</mat-label>
+        <mat-select [(ngModel)]="familiar.genero">
+          <mat-option
+            *ngFor="let gender of ['Masculino', 'Femenino']"
+            [value]="gender"
+          >
+            {{gender}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field class="pb-2 w-75" appearance="fill">
+        <mat-label>Dirección</mat-label>
+        <input
+          matInput
+          placeholder="Dirección"
+          [(ngModel)]="familiar.direccion"
+          required="true"
+        />
+      </mat-form-field>
+      <mat-form-field class="pb-2 w-75" appearance="fill">
+        <mat-label>Parentesco</mat-label>
+        <input
+          matInput
+          placeholder="Parentesco"
+          [(ngModel)]="familiar.parentesco"
+          required="true"
+        />
+      </mat-form-field>
+      <mat-form-field class="pb-2 w-75" appearance="fill">
+        <mat-label>Password</mat-label>
+        <input
+          matInput
+          placeholder="Password"
+          [(ngModel)]="familiar.password"
+          required="true"
+        />
+      </mat-form-field>
+      <mat-form-field class="pb-2 w-75" appearance="fill">
+        <mat-label>Email</mat-label>
+        <input
+          matInput
+          placeholder="Email"
+          [(ngModel)]="familiar.email"
+          required="true"
+        />
+      </mat-form-field>
+      <br />
+      <button mat-button class="w-75 mb-2" (click)="createCustomer()">
+        Crear
+      </button>
+    </div>
+  </div>
+  

@@ -1,0 +1,5 @@
+from .actualizarSignosVitalesView import ActualizarSignosVitalesView
+from .consultarSignosVitalesView import ConsultarSignosVitalesView
+from .consultarSignosVitalesPorPaciente import ConsultarSignosVitalesPorPaciente
+from .crearSignosVitalesView import CrearSignosVitalesView
+from .eliminarSignosVitalesView import EliminarSignosVitalesView

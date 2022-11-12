@@ -1,0 +1,1 @@
+from .profesionalMedico import ProfesionalMedico

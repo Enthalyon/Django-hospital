@@ -1,0 +1,28 @@
+<div class="alignment">
+  <div class="content text-center pt-3">
+    <span class="fs-4 pt-2">Registrar Signos</span>
+    <br>
+    <mat-form-field class="pt-3 pb-2 w-75" appearance="fill">
+      <mat-label>Nombres del Paciente</mat-label>
+      <input matInput placeholder="Nombres" [(ngModel)]="signos.nombres" required="true" disabled="" class="text-white">
+    </mat-form-field>
+    <mat-form-field class="pb-2 w-75" appearance="fill">
+      <mat-label>Oximetria</mat-label>
+      <input matInput placeholder="Oximetria" [(ngModel)]="signos.oximetria" required="true" type="number">
+    </mat-form-field>
+    <mat-form-field class="pb-2 w-75" appearance="fill">
+      <mat-label>Temperatura</mat-label>
+      <input matInput placeholder="Temperatura" [(ngModel)]="signos.temperatura" required="true" type="number">
+    </mat-form-field>
+    <mat-form-field class="pb-2 w-75" appearance="fill">
+      <mat-label>Frecuencia Respiratoria</mat-label>
+      <input matInput placeholder="Frecuencia Respiratoria" [(ngModel)]="signos.frecuencia_respiratoria" required="true" type="number">
+    </mat-form-field>
+    <mat-form-field class="pb-2 w-75" appearance="fill">
+      <mat-label>Glicemia</mat-label>
+      <input matInput placeholder="Glicemia" [(ngModel)]="signos.glicemia" required="true" type="number">
+    </mat-form-field>
+    <br>
+    <button mat-button class="w-75 mb-2" (click)="crearSignos()">Crear</button>
+  </div>
+</div>

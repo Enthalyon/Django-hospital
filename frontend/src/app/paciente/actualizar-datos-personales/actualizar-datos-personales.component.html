@@ -1,0 +1,76 @@
+<div class="alignment">
+  <div class="content text-center pt-3">
+    <span class="fs-4 pt-2">Registrar Paciente</span>
+    <br />
+    <mat-form-field class="pt-3 pb-2 w-75" appearance="fill">
+      <mat-label>Nombres del Paciente</mat-label>
+      <input
+        matInput
+        placeholder="Nombres"
+        [(ngModel)]="paciente.nombres"
+        required="true"
+      />
+    </mat-form-field>
+    <mat-form-field class="pb-2 w-75" appearance="fill">
+      <mat-label>Apellidos del paciente</mat-label>
+      <input
+        matInput
+        placeholder="Apellidos"
+        [(ngModel)]="paciente.apellidos"
+        required="true"
+      />
+    </mat-form-field>
+    <mat-form-field class="pb-2 w-75" appearance="fill">
+      <mat-label>Telefono del paciente</mat-label>
+      <input
+        matInput
+        placeholder="Telefono"
+        [(ngModel)]="paciente.telefono"
+        required="true"
+      />
+    </mat-form-field>
+    <mat-form-field class="pb-2 w-75" appearance="fill">
+      <mat-label>Genero del paciente</mat-label>
+      <mat-select [(ngModel)]="paciente.genero">
+        <mat-option
+          *ngFor="let gender of ['Masculino', 'Femenino']"
+          [value]="gender"
+        >
+          {{gender}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field class="pb-2 w-75" appearance="fill">
+      <mat-label>Dirección</mat-label>
+      <input
+        matInput
+        placeholder="Dirección"
+        [(ngModel)]="paciente.direccion"
+        required="true"
+      />
+    </mat-form-field>
+    <mat-form-field class="pb-2 w-75" appearance="fill">
+      <mat-label>Ciudad</mat-label>
+      <input
+        matInput
+        placeholder="Ciudad"
+        [(ngModel)]="paciente.ciudad"
+        required="true"
+      />
+    </mat-form-field>
+    <mat-form-field class="pb-2 w-75" appearance="fill">
+      <mat-label>Fecha de nacimiento</mat-label>
+      <input
+        matInput
+        placeholder="Fecha de nacimiento"
+        [(ngModel)]="paciente.fecha_de_nacimiento"
+        required="true"
+        type="date"
+      />
+    </mat-form-field>
+    <br />
+    <button mat-button class="w-75 mb-2" (click)="createCustomer()">
+      Crear
+    </button>
+  </div>
+</div>
